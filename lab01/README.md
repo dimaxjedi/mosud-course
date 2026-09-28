@@ -1,4 +1,6 @@
-# lab01 — развёртывание PostgreSQL и загрузка Olist
+Нидзий Д.В. ИНБО-21-23
+
+lab01 — развёртывание PostgreSQL и загрузка Olist
 
 - PostgreSQL: 17 (Docker image postgres:17).
 - Способ импорта: docker exec + psql \copy FROM STDIN.
