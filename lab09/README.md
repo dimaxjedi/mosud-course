@@ -41,6 +41,7 @@ transfer_flat(transfer_id, source_wh, source_city, dest_wh, dest_city, product_i
 - product(product_id, category_name)
 - transfer_item(transfer_id, product_id, qty)
 
+
 - Шаг 2. Убираем транзитивные зависимости.
 Причина: source_wh -> source_city и dest_wh -> dest_city.
 
