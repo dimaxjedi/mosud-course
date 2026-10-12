@@ -1,4 +1,4 @@
-# lab09. Функциональные зависимости и нормализация. Нидзий Д.В. ИНБО-21-23, Вариант 10
+lab09. Функциональные зависимости и нормализация. Нидзий Д.В. ИНБО-21-23, Вариант 10
 
 Исходное отношение
 transfer_flat(transfer_id, source_wh, source_city, dest_wh, dest_city, product_id, category_name, qty, created_at).
@@ -35,6 +35,7 @@ transfer_flat(transfer_id, source_wh, source_city, dest_wh, dest_city, product_i
 Декомпозиция до 3НФ
 - Шаг 1. Убираем частичные зависимости.
 Причина: transfer_id -> source_wh, dest_wh, created_at и product_id -> category_name.
+
 Результат:
 - transfer(transfer_id, source_wh, dest_wh, created_at)
 - product(product_id, category_name)
@@ -42,6 +43,7 @@ transfer_flat(transfer_id, source_wh, source_city, dest_wh, dest_city, product_i
 
 - Шаг 2. Убираем транзитивные зависимости.
 Причина: source_wh -> source_city и dest_wh -> dest_city.
+
 Результат:
 - warehouse(warehouse_id, city)
 - transfer(transfer_id, source_wh, dest_wh, created_at), где source_wh, dest_wh — FK на warehouse.
