@@ -34,20 +34,20 @@ fk_transfer_items_transfer, fk_transfer_items_product.
 
 Кратности и обязательность
 
-warehouses 1:N inventory (обязательно).
-warehouses 1:N transfers.source_wh (обязательно).
-warehouses 1:N transfers.dest_wh (обязательно).
-transfers 1:N transfer_items (обязательно).
-olist.products 1:N inventory (обязательно).
-olist.products 1:N transfer_items (обязательно).
+- warehouses 1:N inventory (обязательно).
+- warehouses 1:N transfers.source_wh (обязательно).
+- warehouses 1:N transfers.dest_wh (обязательно).
+- transfers 1:N transfer_items (обязательно).
+- olist.products 1:N inventory (обязательно).
+- olist.products 1:N transfer_items (обязательно).
 
 Ошибочные операции
 
-INSERT в inventory с несуществующим product_id — отклонит fk_inventory_product.
-INSERT в transfer_items с qty = 0 — отклонит ck_transfer_items_qty.
-INSERT в transfers с source_wh = dest_wh — отклонит ck_transfers_diff_wh.
-UPDATE warehouses SET capacity = -100 — отклонит ck_warehouses_capacity.
-UPDATE transfers SET transfer_code = существующий — отклонит uq_transfers_code.
+- INSERT в inventory с несуществующим product_id — отклонит fk_inventory_product.
+- INSERT в transfer_items с qty = 0 — отклонит ck_transfer_items_qty.
+- INSERT в transfers с source_wh = dest_wh — отклонит ck_transfers_diff_wh.
+- UPDATE warehouses SET capacity = -100 — отклонит ck_warehouses_capacity.
+- UPDATE transfers SET transfer_code = существующий — отклонит uq_transfers_code.
 
 Проверка
 Запрос к information_schema.table_constraints по таблицам схемы lab подтверждает все ограничения.
